@@ -4,10 +4,10 @@
 
 @layer components {
   .infoText {
-    @apply max-w-[300px] rounded-lg border border-slate-700 bg-slate-900/40 p-4 text-gray-100 shadow-md;
+    @apply max-w-[300px] rounded-lg border border-darkpurp-600 bg-gypsypurp-900/40 p-4 text-gray-100 shadow-md text-sm;
   }
 
   .chatRow {
-    @apply flex cursor-pointer items-center justify-start gap-3 space-x-2 rounded-lg bg-slate-600 px-5 py-3  text-center text-xl text-slate-200 drop-shadow transition-all duration-200 ease-out hover:bg-slate-700/70;
+    @apply flex cursor-pointer items-center justify-start gap-3 space-x-2 rounded-lg bg-mattepurp-400 px-5 py-3  text-center text-xl text-gypsygold-200 drop-shadow transition-all duration-200 ease-out hover:bg-darkpink-400/70;
   }
 }

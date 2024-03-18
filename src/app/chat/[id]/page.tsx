@@ -1,5 +1,5 @@
-import ChatWindow from '@/components/ChatWindow';
-import MessageInput from '@/components/MessageInput';
+import ChatWindow from '@/components/chat/ChatWindow';
+import MessageInput from '@/components/chat/MessageInput';
 import React from 'react';
 
 type Props = {

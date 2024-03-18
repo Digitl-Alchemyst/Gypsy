@@ -1,10 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
 'use client';
 
 import { PlusIcon } from '@heroicons/react/24/solid';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
-import { db } from '../../firebase';
+import { db } from '../../../firebase';
 
 // type Props = {
 //   id: string;
@@ -30,10 +31,10 @@ function NewChat() {
   return (
     <div
       onClick={createNewChat}
-      className='chatRow rounded-md border border-slate-800 shadow-md shadow-slate-700'
+      className='mt-4 chatRow bg-gypsydark-300  border-gypsydark-800 shadow-gypsydark-700 rounded-md border shadow-md'
     >
-      <PlusIcon className='h-5 w-5 items-center justify-center text-slate-200' />
-      <p>New Chat</p>
+      <PlusIcon className='text-gypsydark-800 h-5 w-5 items-center justify-center' />
+      <p className='text-gypsydark-700'>New Chat</p>
     </div>
   );
 }

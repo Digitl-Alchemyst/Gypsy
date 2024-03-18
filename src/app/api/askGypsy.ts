@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import query from '@/util/queryApi';
+import query from '@/lib/util/queryApi';
 import admin from 'firebase-admin';
 import gypsy from '@/public/gypsy.png';
 import { adminDb } from '@/firebaseAdmin';
