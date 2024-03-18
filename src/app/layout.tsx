@@ -1,10 +1,13 @@
 import './globals.css';
 import SideBar from '@/components/global/Sidebar';
 import { SessionProvider } from '@/components/providers/SessionProvider';
+// import { SessionProvider } from 'next-auth/react';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]';
+import { authOptions } from '@/l/auth';
+// import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import Login from '@/components/auth/Login';
 import ClientProvider from '@/components/providers/ClientProvider';
+import Header from '@/components/global/Header';
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -28,16 +31,19 @@ export default async function RootLayout({
           {!session ? (
             <Login />
           ) : (
-            <div className='flex'>
-              <div className='h-screen max-w-xs overflow-y-auto bg-[#202123] md:min-w-[20rem] lg:min-w-[22rem]'>
-                {/* <SideBar /> */}
+            <>
+              <Header />
+              <div className='flex'>
+                <div className='bg-gypsydark-700 h-screen max-w-xs overflow-y-auto md:min-w-[20rem] lg:min-w-[22rem]'>
+                  <SideBar />
+                </div>
+
+                {/* Client Working Notification */}
+                <ClientProvider />
+
+                <div className='flex-1 bg-[#343541]'>{children}</div>
               </div>
-
-              {/* Client Working Notification */}
-              <ClientProvider />
-
-              <div className='flex-1 bg-[#343541]'>{children}</div>
-            </div>
+            </>
           )}
         </SessionProvider>
       </body>

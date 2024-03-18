@@ -94,13 +94,13 @@ You will need an API key from OpenAI to use the GypsyGPT chat bot. You can enter
 
 The chat history is stored in firebase cloud firestore. You can view the chat history by logging into your account.
 
-## OpenAI API Key
+## Application API
 
-You will need an API key from OpenAI to use the GypsyGPT chat bot. You can enter your API Key in the settings menu of the appilication. This key is encrypted for your security & stored in Firebase Cloud Firestore. When you
-
-## Chat Message History
-
-The chat history is stored in firebase cloud firestore. You can view the chat history by logging into your account.
+/api/auth/signout
+    => Logout
+/api/auth/signIn
+    => Login
+/api/auth/callback 
 
 <h1>
 <ul><b>Project Stage Details</b></ul>

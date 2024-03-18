@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 'use client';
 
 import { Session } from 'next-auth';
@@ -13,7 +14,6 @@ export function SessionProvider({ children, session }: Props) {
 
   return (
     <Provider session={session}>
-      {' '}
       {/* Pass the `session` prop to `SessionProvider` */}
       {children}
     </Provider>

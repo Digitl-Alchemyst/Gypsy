@@ -1,9 +1,10 @@
-import NextAuth from 'next-auth';
-import CredentialsProvider from 'next-auth/providers/credentials';
+/* eslint-disable import/prefer-default-export */
+import { NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
-export const authOptions = {
-  providers: [
+
+export const authOptions: NextAuthOptions = {
+    providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID!,
       clientSecret: process.env.GOOGLE_SECRET!,
@@ -22,6 +23,8 @@ export const authOptions = {
     //     clientSecret: process.env.APPLE_SECRET!,
     // }),
   ],
+    pages: {
+    signIn: '/login',
+  },
 };
 
-export default NextAuth(authOptions);
