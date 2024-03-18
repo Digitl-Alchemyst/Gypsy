@@ -3,7 +3,7 @@ import SideBar from '@/components/global/Sidebar';
 import { SessionProvider } from '@/components/providers/SessionProvider';
 // import { SessionProvider } from 'next-auth/react';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/l/auth';
+import { authOptions } from '@/lib/util/auth';
 // import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import Login from '@/components/auth/Login';
 import ClientProvider from '@/components/providers/ClientProvider';

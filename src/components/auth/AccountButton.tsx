@@ -13,7 +13,7 @@ function AccountButton() {
     <div>
       {session && (
         <div
-          className='flex items-center justify-between gap-5 rounded-md hover:cursor-pointer hover:border hover:border-slate-600/50 hover:bg-slate-700 hover:shadow-md'
+          className='flex items-center justify-between gap-5 rounded-md hover:cursor-pointer hover:border hover:border-mattepurp-600/50 hover:bg-mattepurp-700 hover:shadow-md py-1 px-3'
           onClick={() => signOut()}
         >
           <div className='flex items-center gap-5'>
@@ -22,14 +22,14 @@ function AccountButton() {
               alt='user'
               width={8}
               height={8}
-              className='h-8 w-8 cursor-pointer rounded-full hover:opacity-50 object-contain'
+              className='h-8 w-8 cursor-pointer rounded-full hover:opacity-50'
             />
-            <span className='justify-self-start text-lg font-semibold text-slate-300'>
+            <span className='justify-self-start text-lg font-semibold text-gypsygold-300'>
               {session.user?.name!}
             </span>
           </div>
 
-          <EllipsisHorizontalIcon className='h-8 w-8 justify-self-end text-slate-300' />
+          <EllipsisHorizontalIcon className='h-8 w-8 justify-self-end text-gypsygold-400' />
         </div>
       )}
     </div>
