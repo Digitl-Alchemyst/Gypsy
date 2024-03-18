@@ -1,5 +1,5 @@
 import './globals.css';
-import SideBar from '@/components/Sidebar';
+import SideBar from '@/src/components/Sidebar';
 import { SessionProvider } from '@/components/SessionProvider';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
