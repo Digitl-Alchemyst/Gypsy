@@ -2,7 +2,7 @@
 
 import { signIn, useSession } from 'next-auth/react'
 import Image from 'next/image'
-import GPT from '../public/GPT.png'
+
 
 
 function Login() {
@@ -10,7 +10,7 @@ function Login() {
     <div className='bg-amber-950'>
     <div className="bg-amber-500/50 h-screen flex flex-col items-center justify-center text-center gap-2">
       <Image
-        src={GPT}
+        src='/GPT.png'
         alt='Gypsy Logo'
         height={200}
         width={200}

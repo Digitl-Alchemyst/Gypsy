@@ -1,7 +1,7 @@
 
 import { QuestionMarkCircleIcon, BoltIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
-import gypsy from '../public/gypsy.png'
+
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
     {/* <div className="flex flex-col items-center bg-slate-600/40 p-5 rounded-xl drop-shadow-lg border border-slate-800/40"> */}
       <h1 className="text-7xl font-bold mb-20">GypsyGPT</h1>
       <Image
-        src={gypsy}
+        src='/gypsy.png'
         alt="GypsyGPT"
         width={800}
         height={800}
