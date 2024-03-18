@@ -1,6 +1,7 @@
 'use client';
 
-import { signIn, useSession } from 'next-auth/react';
+import { signIn 
+} from 'next-auth/react';
 import Image from 'next/image';
 
 function Login() {
@@ -17,7 +18,7 @@ function Login() {
           </button>
         </div>
         <p className='bg-darkpink-300 flex justify-center rounded-lg p-3 text-gypsygold-200 shadow-lg'>
-          This is a clone of ChatGPT, with enhanced features. You will need your
+          This is an interface for ChatGPT with enhanced features. You will need your
           own API Key to interact with this Application.
         </p>
       </div>

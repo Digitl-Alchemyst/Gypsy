@@ -16,20 +16,21 @@ function AccountButton() {
           className='flex items-center justify-between gap-5 rounded-md hover:cursor-pointer hover:border hover:border-mattepurp-600/50 hover:bg-mattepurp-700 hover:shadow-md py-1 px-3'
           onClick={() => signOut()}
         >
-          <div className='flex items-center gap-5'>
+          <div className='flex items-center space-x-3'>
             <Image
               src={session.user?.image!}
               alt='user'
-              width={8}
-              height={8}
-              className='h-8 w-8 cursor-pointer rounded-full hover:opacity-50'
+              width={35}
+              height={35}
+              quality={100}
+              className=' cursor-pointer rounded-full hover:opacity-50'
             />
             <span className='justify-self-start text-lg font-semibold text-gypsygold-300'>
               {session.user?.name!}
             </span>
+          <EllipsisHorizontalIcon className='h-8 w-8 justify-self-end text-gypsygold-400' />
           </div>
 
-          <EllipsisHorizontalIcon className='h-8 w-8 justify-self-end text-gypsygold-400' />
         </div>
       )}
     </div>
