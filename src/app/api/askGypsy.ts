@@ -4,7 +4,6 @@ import admin from 'firebase-admin';
 import gypsy from '@/public/gypsy.png';
 import { adminDb } from '@/firebaseAdmin';
 
-
 type Data = {
   answer: string;
 };
@@ -22,7 +21,7 @@ type Message = {
 // API Route
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<Data>,
 ) {
   const { prompt, chatId, model, session } = req.body;
 

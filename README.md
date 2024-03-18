@@ -14,8 +14,8 @@ Updated version of ChatGPT clone using NextJS 14 + Tailwind CSS + Typescript wit
 <ul><b>Project Demo</b></ul>
 </h3>
 
-<a href=""> </a>
-<a href="https://vagablog.vercel.app/" target="blank"><img align="center" src="https://vagablog.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fai-3.f1583cb3.jpg&w=640&q=75" alt="logo" height="85" width="250" /></a>
+<a href=""> </a> <a href="https://vagablog.vercel.app/" target="blank"><img align="center" src="https://vagablog.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fai-3.f1583cb3.jpg&w=640&q=75" alt="logo" height="85" width="250" /></a>
+
 <h2>
 <ul><b>Development Enviroment / Tech Stack</b></ul>
 </h2>
@@ -88,7 +88,7 @@ Updated version of ChatGPT clone using NextJS 14 + Tailwind CSS + Typescript wit
 
 ## OpenAI API Key
 
-You will need an API key from OpenAI to use the GypsyGPT chat bot. You can enter your API Key in the settings menu of the appilication. This key is encrypted for your security & stored in Firebase Cloud Firestore. When you 
+You will need an API key from OpenAI to use the GypsyGPT chat bot. You can enter your API Key in the settings menu of the appilication. This key is encrypted for your security & stored in Firebase Cloud Firestore. When you
 
 ## Chat Message History
 
@@ -96,7 +96,7 @@ The chat history is stored in firebase cloud firestore. You can view the chat hi
 
 ## OpenAI API Key
 
-You will need an API key from OpenAI to use the GypsyGPT chat bot. You can enter your API Key in the settings menu of the appilication. This key is encrypted for your security & stored in Firebase Cloud Firestore. When you 
+You will need an API key from OpenAI to use the GypsyGPT chat bot. You can enter your API Key in the settings menu of the appilication. This key is encrypted for your security & stored in Firebase Cloud Firestore. When you
 
 ## Chat Message History
 

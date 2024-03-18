@@ -8,17 +8,26 @@ import { db } from '../firebase';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
 type Props = {
-    chatId: string;
+  chatId: string;
 };
 
 const ChatWindow = ({ chatId }: Props) => {
   const { data: session } = useSession();
 
-  const [messages] = useCollection(session && query(
-    collection(db, 'users', session?.user?.email!, 'chats', chatId, 'messages'),
-    orderBy('createdAt', 'asc')
-  ))
-
+  const [messages] = useCollection(
+    session &&
+      query(
+        collection(
+          db,
+          'users',
+          session?.user?.email!,
+          'chats',
+          chatId,
+          'messages',
+        ),
+        orderBy('createdAt', 'asc'),
+      ),
+  );
 
   return (
     <div className='flex-1'>
