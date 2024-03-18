@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import NewChat from './NewChat';
+import NewChat from '../chat/NewChat';
 import { useSession, signOut } from 'next-auth/react';
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
 

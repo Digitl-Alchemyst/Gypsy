@@ -1,16 +1,16 @@
 import './globals.css';
-import SideBar from '@/components/Sidebar';
-import { SessionProvider } from '@/components/SessionProvider';
+import SideBar from '@/components/global/Sidebar';
+import { SessionProvider } from '@/components/providers/SessionProvider';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]';
-import Login from '@/components/Login';
-import ClientProvider from '@/components/ClientProvider';
+import Login from '@/components/auth/Login';
+import ClientProvider from '@/components/providers/ClientProvider';
 
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'GypsyGPT',
-  description: 'Growth Performance Tool',
+  description: 'AI Assisstant Growth Performance Tool',
 };
 
 export default async function RootLayout({
@@ -30,7 +30,7 @@ export default async function RootLayout({
           ) : (
             <div className='flex'>
               <div className='h-screen max-w-xs overflow-y-auto bg-[#202123] md:min-w-[20rem] lg:min-w-[22rem]'>
-                <SideBar />
+                {/* <SideBar /> */}
               </div>
 
               {/* Client Working Notification */}

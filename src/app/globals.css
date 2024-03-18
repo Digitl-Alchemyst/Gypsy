@@ -4,7 +4,7 @@
 
 @layer components {
   .infoText {
-    @apply max-w-[300px] rounded-lg border border-slate-700 bg-slate-900/40 p-4 text-gray-100 shadow-md;
+    @apply max-w-[300px] rounded-lg border border-darkpurp-600 bg-gypsypurp-900/40 p-4 text-gray-100 shadow-md text-sm;
   }
 
   .chatRow {
