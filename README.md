@@ -19,19 +19,21 @@ Updated version of ChatGPT clone using NextJS 14 + Tailwind CSS + Typescript wit
 <h2>
 <ul><b>Development Enviroment / Tech Stack</b></ul>
 </h2>
-
 <h4>
     Frontend<br>
         => Next.js<br>
         => React.js<br>
         => Typescript<br>
-        => Tailwind CSS<br>
         => Typescript<br>
+        => Tailwind CSS<br>
     Plugins<br>
+        => OpenAI API<br>
+        => WhisperAI API<br>
         => OpenAI API<br>
         => WhisperAI API<br>
         => Tip-Tap<br>
         => Hero Icons<br>
+        => Media Recorder<br>
         => Media Recorder<br>
     Middleware<br>
         => useSWR<br>
@@ -40,10 +42,17 @@ Updated version of ChatGPT clone using NextJS 14 + Tailwind CSS + Typescript wit
         => Node.js<br>
         => Firebase Admin<br>           
         => Azure Serverless Functions<br>           
+        => Azure Serverless Functions<br>           
     Data Management<br>
         => Firebase<br>
         => Firestore<br>
     Authentication?<br>
+        => NextAuth<br>
+        => Firebase Google Auth<br>
+    Concepts<br>
+        => Server Components<br>
+        => Multi-Tenant<br>
+        => Serverless Functions<br>
         => NextAuth<br>
         => Firebase Google Auth<br>
     Concepts<br>
@@ -61,6 +70,7 @@ Updated version of ChatGPT clone using NextJS 14 + Tailwind CSS + Typescript wit
     Node.js 18.16.0
     npm/npx 9.5.1
     Next.js 14
+    Next.js 14
 
 ## Packages
 
@@ -75,6 +85,14 @@ Updated version of ChatGPT clone using NextJS 14 + Tailwind CSS + Typescript wit
 ## Run Application
 
     npm run dev
+
+## OpenAI API Key
+
+You will need an API key from OpenAI to use the GypsyGPT chat bot. You can enter your API Key in the settings menu of the appilication. This key is encrypted for your security & stored in Firebase Cloud Firestore. When you 
+
+## Chat Message History
+
+The chat history is stored in firebase cloud firestore. You can view the chat history by logging into your account.
 
 ## OpenAI API Key
 
