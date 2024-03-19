@@ -1,12 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 'use client';
 
-import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
-import { useSession } from 'next-auth/react';
 import { useState, FormEvent } from 'react';
+import { useSession } from 'next-auth/react';
 import { addDoc, serverTimestamp, collection } from 'firebase/firestore';
 import { db } from '#/firebase';
 import toast from 'react-hot-toast';
+import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
+import MessageSettings from './MessageSettings';
 
 
 type Props = {
@@ -51,33 +52,37 @@ function MessageInput({ chatId }: Props) {
       message,
     );
 
-    // Toast notification  for loading
-    const notification = toast.loading('Chat GPT is thinking...');
+    // // Toast notification  for loading
+    // const notification = toast.loading('GypsyGPT is thinking...');
 
-    await fetch('/api/askGypsy', {
-      // await fetch('/app/api/askGypsy', {
-      // await fetch(`/pages/api/askGypsy`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        prompt: input,
-        chatId,
-        model,
-        session,
-      }),
-    }).then(() => {
-      // Toast notification for success
-      toast.success('Chat GPT has responded!', {
-        id: notification,
-      });
-    });
+    // await fetch('/api/askGypsy', {
+    //   // await fetch('/app/api/askGypsy', {
+    //   // await fetch(`/pages/api/askGypsy`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     prompt: input,
+    //     chatId,
+    //     model,
+    //     session,
+    //   }),
+    // }).then(() => {
+    //   // Toast notification for success
+    //   toast.success('GypsyGPT has responded!', {
+    //     id: notification,
+    //   });
+    // });
   };
 
   return (
-    <div className='m-2 justify-end w-9/12 rounded-lg border border-mattepurp-600 bg-mattepurp-600/60 text-sm text-mattepurp-300'>
-      <form onSubmit={sendMessage} className='flex items-end space-x-5 py-2 pl-5 pr-3'>
+    <div className='m-2 flex w-10/12 flex-col items-center rounded-lg  border border-mattepurp-600 bg-mattepurp-600/60 text-mattepurp-300'>
+      <MessageSettings />
+      <form
+        onSubmit={sendMessage}
+        className='flex w-full items-end space-x-3 py-1 pl-5 pr-3 text-sm flex-1'
+      >
         <textarea
           // type='text'
           value={prompt}
@@ -85,13 +90,13 @@ function MessageInput({ chatId }: Props) {
           rows={2}
           disabled={!session}
           onChange={(e) => setPrompt(e.target.value)}
-          className='flex-1 bg-transparent focus:outline-none disabled:cursor-not-allowed disabled:text-mattepurp-400 text-gypsygold-100 max-h-[25dvh]'
+          className='max-h-[20dvh] flex-1 rounded-md border border-gypsypurp-400/60 bg-mattepurp-600/60 px-4  py-1 text-gypsygold-100 focus:outline-none disabled:cursor-not-allowed disabled:text-mattepurp-400'
           placeholder='Please enter your prompt here...'
         />
         <button
           type='submit'
           disabled={!prompt || !session}
-          className='rounded-lg border h-12 border-mattepurp-600 bg-gypsypurp-600 px-3 py-2 font-bold text-gypsypink-400 shadow-lg hover:opacity-50 disabled:cursor-not-allowed disabled:bg-gypsypurp-400 disabled:text-gypsypink-600'
+          className='my-1 h-12 rounded-lg border border-mattepurp-600 bg-gypsypurp-600 px-3 py-2 font-bold text-gypsypink-400 shadow-lg hover:opacity-50 disabled:cursor-not-allowed disabled:bg-gypsypurp-400 disabled:text-gypsypink-600'
         >
           <PaperAirplaneIcon className='h-7 w-7 -rotate-45' />
         </button>

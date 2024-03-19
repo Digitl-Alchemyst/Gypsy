@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import query from '@/lib/util/queryApi';
 import admin from 'firebase-admin';
 import gypsy from '@/public/gypsy.png';
-import { adminDb } from '@/firebaseAdmin';
+import { adminDb } from '#/firebaseAdmin';
 
 type Data = {
   answer: string;
@@ -39,12 +39,12 @@ export default async function handler(
   const response = await query(prompt, chatId, model);
 
   const message: Message = {
-    text: response || 'GPT cant answer right now! Try again later...',
+    text: response || 'GypsyGPT cant answer right now! Try again later...',
     createdAt: admin.firestore.Timestamp.now(),
     user: {
-      _id: 'ChatGPT',
-      name: 'ChatGPT',
-      avatar: 'https://links.papareact.com/89k',
+      _id: 'GypsyGPT',
+      name: 'GypsyGPT',
+      avatar: '/Icon.png',
     },
   };
 
