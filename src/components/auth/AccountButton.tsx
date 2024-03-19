@@ -13,8 +13,8 @@ function AccountButton() {
   return (
     <div>
       {session && (
-        <div className='flex items-center justify-between gap-5 rounded-md px-3 py-1  hover:border hover:border-mattepurp-600/50 hover:bg-mattepurp-700 hover:shadow-md'>
-          <div className='flex items-center space-x-3'>
+        <div className='flex w-full items-center gap-5 rounded-md px-3 py-1 hover:border hover:border-mattepurp-600/50 hover:bg-mattepurp-700 hover:shadow-md'>
+          <div className='flex items-center justify-between space-x-3 w-full'>
             <Image
               src={session.user?.image!}
               alt='user'

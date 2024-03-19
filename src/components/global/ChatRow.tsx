@@ -47,17 +47,17 @@ function ChatRow({ id }: Props) {
   return (
     <Link
       href={`/chat/${id}`}
-      className={`chatRow my-2 justify-center 
-            ${activeChat && 'border border-mattepurp-600/50 bg-gypsypurp-700 hover:bg-darkpurp-600'}
+      className={`chatRow my-2 rounded-lg border border-mattepurp-400/60 bg-darkpurp-400/40 text-gypsypurp-300 hover:bg-darkpink-400/30
+            ${activeChat && '  bg-gypsypurp-400/70 text-gypsygold-300 hover:bg-darkpink-500/30'}
             `}
     >
-      <ChatBubbleLeftIcon className='h-6 w-6 text-gypsypurp-300' />
-      <p className=' hidden flex-1 truncate text-gypsypurp-200 md:inline-flex'>
+      <ChatBubbleLeftIcon className='h-6 w-6 text-gypsypurp-400' />
+      <p className=' hidden flex-1 truncate md:inline-flex'>
         {messages?.docs[messages?.docs.length - 1]?.data().text ||
           'Start a new chat'}
       </p>
       <TrashIcon
-        className='text-darkpink-400 h-5 w-5 hover:text-gypsypink-600'
+        className='h-5 w-5 text-gypsypink-500 hover:text-darkpink-600'
         onClick={deleteChat}
       />
     </Link>

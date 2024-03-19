@@ -28,10 +28,10 @@ function NewChat() {
   return (
     <div
       onClick={createNewChat}
-      className='mt-4 chatRow bg-gypsydark-300  border-gypsydark-800 shadow-gypsydark-700 rounded-md border shadow-md'
+      className='hover:bg-darkpink-400/70 chatRow my-2 mt-4 rounded-lg  border border-gypsydark-800 bg-gypsypurp-300  shadow-md shadow-gypsydark-700'
     >
-      <PlusIcon className='text-gypsydark-800 h-5 w-5 items-center justify-center' />
-      <p className='text-gypsydark-700'>New Chat</p>
+      <PlusIcon className='h-5 w-5 items-center justify-center text-gypsydark-800' />
+      <p className='text-gypsydark-600'>New Chat</p>
     </div>
   );
 }

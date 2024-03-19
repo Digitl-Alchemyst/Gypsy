@@ -32,7 +32,7 @@ const ChatWindow = ({ chatId }: Props) => {
   );
 
  return (
-   <div className='flex overflow-y-auto flex-col w-full space-y-4 items-center overflow-x-hidden scrollbar-hide'>
+   <div className='flex overflow-y-auto flex-col w-full space-y-4 items-center overflow-x-hidden scrollbar-hide '>
     {messages?.empty && (
       <div className='flex flex-col items-center justify-start h-full w-full'>
       <p className='text-lg text-gypsypurp-300 mt-12 text-center'>Enter a Prompt below to get started.</p>

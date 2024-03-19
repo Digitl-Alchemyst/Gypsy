@@ -13,7 +13,7 @@ function ChatPage({ params: { id } }: Props) {
   return (
     <div className='flex h-full w-full flex-col items-center justify-center pt-6 '>
       {/* Chat History Window */}
-      <div className='flex h-full w-full flex-1 overflow-y-hidden scrollbar-hide'>
+      <div className='flex h-full w-full flex-1 overflow-y-hidden pb-8 scrollbar-hide'>
         <ChatWindow chatId={id} />
       </div>
       {/* Message Input Box */}
