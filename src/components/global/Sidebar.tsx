@@ -9,7 +9,7 @@ import NewChat from './NewChat';
 import { db } from '#/firebase';
 import { collection, orderBy, query } from '@firebase/firestore';
 import { useSession } from 'next-auth/react';
-import ChatRow from '../chat/ChatRow';
+import ChatRow from './ChatRow';
 
 
 function Sidebar() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import SamplePrompts from '@/components/elements/SamplePrompts';
+import SamplePrompts from '@/components/hero/SamplePrompts';
 
 const WelcomePage = () => {
   return (

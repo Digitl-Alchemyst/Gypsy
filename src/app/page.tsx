@@ -1,10 +1,9 @@
-import WelcomePage from "@/components/elements/WelcomePage";
-
+import WelcomePage from '@/components/hero/WelcomePage';
 
 export default function Home() {
-return (
-  <div className='flex flex-1 items-center justify-center'>
-    <WelcomePage />
-  </div>
-);
+  return (
+    <div className='flex flex-1 items-center justify-center'>
+      <WelcomePage />
+    </div>
+  );
 }
