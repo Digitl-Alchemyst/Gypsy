@@ -11,19 +11,16 @@ type Props = {
 function ChatPage({ params: { id } }: Props) {
 
   return (
-
-      <div className='flex h-full w-full flex-col pt-6 items-center justify-center'>
-        {/* Chat History Window */}
-        <div className='w-full flex-1 h-full flex'>
-          <ChatWindow chatId={id} />
-        </div>
-        {/* Message Input Box */}
-        <div className='w-full flex items-center justify-center'>
-
-        <MessageInput chatId={id}  />
-        </div>
+    <div className='flex h-full w-full flex-col items-center justify-center pt-6 '>
+      {/* Chat History Window */}
+      <div className='flex h-full w-full flex-1 overflow-y-hidden scrollbar-hide'>
+        <ChatWindow chatId={id} />
       </div>
-
+      {/* Message Input Box */}
+      <div className='flex w-full items-center justify-center'>
+        <MessageInput chatId={id} />
+      </div>
+    </div>
   );
 }
 

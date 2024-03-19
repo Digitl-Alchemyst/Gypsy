@@ -23,28 +23,29 @@ export default async function RootLayout({
 }) {
   const session = await getServerSession(authOptions);
 
- return (
-   <html lang='en'>
-     <body className='flex h-screen flex-col'>
-       <SessionProvider session={session}>
-         {!session ? (
-           <Login />
-         ) : (
-           <>
-             <Header />
-             <div className='flex h-full w-full'>
-               <div className='bg-gypsydark-700 w-1/6'>
-                 <SideBar />
-               </div>
-               <div className='bg-darkpurp-700 h-full w-full'>
-                 <div className='px-5 h-full'>{children}</div>
-               </div>
-             </div>
-           </>
-         )}
-       </SessionProvider>
-     </body>
-   </html>
- );
-
+  return (
+    <html lang='en'>
+      <body className='flex h-screen flex-col'>
+        <SessionProvider session={session}>
+          {!session ? (
+            <Login />
+          ) : (
+            <div className='flex flex-col h-screen'>
+              <Header />
+              <div className='flex w-full overflow-y-hidden scrollbar-hide h-full'>
+                {/* Sidebar  */}
+                <div className='w-1/6 bg-gypsydark-700'>
+                  <SideBar />
+                </div>
+                {/* Main App Window  */}
+                <div className='h-full w-full overflow-y-hidden bg-darkpurp-700 px-5'>
+                  {children}
+                </div>
+              </div>
+            </div>
+          )}
+        </SessionProvider>
+      </body>
+    </html>
+  );
 }

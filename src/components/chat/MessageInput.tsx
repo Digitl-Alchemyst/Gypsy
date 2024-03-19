@@ -8,6 +8,7 @@ import { db } from '#/firebase';
 import toast from 'react-hot-toast';
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
 import MessageSettings from './MessageSettings';
+import AudioRecorder from './AudioRecorder';
 
 
 type Props = {
@@ -79,15 +80,16 @@ function MessageInput({ chatId }: Props) {
   return (
     <div className='m-2 flex w-10/12 flex-col items-center rounded-lg  border border-mattepurp-600 bg-mattepurp-600/60 text-mattepurp-300'>
       <MessageSettings />
+      <div className='flex w-full pb-2 px-4 space-x-3'>
       <form
         onSubmit={sendMessage}
-        className='flex w-full items-end space-x-3 py-1 pl-5 pr-3 text-sm flex-1'
+        className='flex w-full items-end space-x-3 text-sm flex-1 '
       >
-        <textarea
-          // type='text'
+        <input
+          type='text'
           value={prompt}
           tabIndex={0}
-          rows={2}
+          // rows={2}
           disabled={!session}
           onChange={(e) => setPrompt(e.target.value)}
           className='max-h-[20dvh] flex-1 rounded-md border border-gypsypurp-400/60 bg-mattepurp-600/60 px-4  py-1 text-gypsygold-100 focus:outline-none disabled:cursor-not-allowed disabled:text-mattepurp-400'
@@ -102,7 +104,11 @@ function MessageInput({ chatId }: Props) {
         </button>
       </form>
 
-      <div>{/* Model Selection  */}</div>
+      {/* Audio Recorder  */}
+      <AudioRecorder />
+      </div>
+      {/* Model Selection  */}
+      <div></div>
     </div>
   );
 }

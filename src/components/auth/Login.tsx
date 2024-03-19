@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 function Login() {
   return (
-    <div className='mx-auto flex justify-center bg-gypsygold-700'>
+    <div className='mx-auto w-full flex justify-center bg-gypsygold-700'>
       <div className='mx-auto flex h-screen w-full flex-col items-center justify-between gap-2 bg-gypsygold-500/60 py-12 text-center'>
         <div className='mt-44 flex flex-col items-center justify-center space-y-8'>
           <Image src='/Full.png' alt='Gypsy Logo' height={200} width={200} />
