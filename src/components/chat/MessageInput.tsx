@@ -77,19 +77,21 @@ function MessageInput({ chatId }: Props) {
 
   return (
     <div className='m-2 justify-end w-9/12 rounded-lg border border-mattepurp-600 bg-mattepurp-600/60 text-sm text-mattepurp-300'>
-      <form onSubmit={sendMessage} className='flex space-x-5 py-2 pl-5 pr-3'>
-        <input
-          type='text'
+      <form onSubmit={sendMessage} className='flex items-end space-x-5 py-2 pl-5 pr-3'>
+        <textarea
+          // type='text'
           value={prompt}
+          tabIndex={0}
+          rows={2}
           disabled={!session}
           onChange={(e) => setPrompt(e.target.value)}
-          className='flex-1 bg-transparent focus:outline-none disabled:cursor-not-allowed disabled:text-mattepurp-400 text-gypsygold-100'
-          placeholder='Type your message here...'
+          className='flex-1 bg-transparent focus:outline-none disabled:cursor-not-allowed disabled:text-mattepurp-400 text-gypsygold-100 max-h-[25dvh]'
+          placeholder='Please enter your prompt here...'
         />
         <button
           type='submit'
           disabled={!prompt || !session}
-          className='rounded-lg border border-mattepurp-600 bg-gypsypurp-600 px-3 py-2 font-bold text-gypsypink-400 shadow-lg hover:opacity-50 disabled:cursor-not-allowed disabled:bg-gypsypurp-400 disabled:text-gypsypink-600'
+          className='rounded-lg border h-12 border-mattepurp-600 bg-gypsypurp-600 px-3 py-2 font-bold text-gypsypink-400 shadow-lg hover:opacity-50 disabled:cursor-not-allowed disabled:bg-gypsypurp-400 disabled:text-gypsypink-600'
         >
           <PaperAirplaneIcon className='h-7 w-7 -rotate-45' />
         </button>

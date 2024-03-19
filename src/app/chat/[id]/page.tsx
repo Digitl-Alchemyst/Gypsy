@@ -12,19 +12,19 @@ function ChatPage({ params: { id } }: Props) {
   // console.log(props)
 
   return (
-    <div className='flex h-full min-h-max flex-col items-center w-full justify-between pt-6'>
-      <div className='flex justify-between items-center flex-col h-screen -mt-22 w-full'>
+    <div className='flex w-full flex-col items-center justify-between pt-6'>
+      <div className='flex h-[91vh] w-full flex-col items-center justify-between'>
+        {/* Chat History Window */}
+        <div className='w-full flex-1'>
+          <ChatWindow chatId={id} />
+        </div>
+        {/* Message Input Box */}
 
-      {/* Chat History Window */}
-      <div className='w-full flex-1'>
-        <ChatWindow chatId={id} />
-      </div>
-      {/* Message Input Box */}
-
-      <MessageInput chatId={id} />
+        <MessageInput chatId={id}  />
       </div>
     </div>
   );
 }
 
 export default ChatPage;
+
