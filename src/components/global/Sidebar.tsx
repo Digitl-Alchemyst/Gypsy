@@ -24,7 +24,7 @@ function Sidebar() {
   );
 
   return (
-    <div className='flex h-screen flex-col  border-r border-purple-400 p-2'>
+    <div className='flex h-full flex-col min-h-max border-r border-purple-400 p-2'>
       <div className='flex justify-between flex-col h-full'>
         <div className='flex-1'>
           <NewChat />

@@ -76,7 +76,7 @@ function MessageInput({ chatId }: Props) {
   };
 
   return (
-    <div className='m-2 w-9/12 rounded-lg border border-mattepurp-600 bg-mattepurp-600/60 text-sm text-mattepurp-300'>
+    <div className='m-2 justify-end w-9/12 rounded-lg border border-mattepurp-600 bg-mattepurp-600/60 text-sm text-mattepurp-300'>
       <form onSubmit={sendMessage} className='flex space-x-5 py-2 pl-5 pr-3'>
         <input
           type='text'
