@@ -41,7 +41,7 @@ export default async function RootLayout({
                 {/* Client Working Notification */}
                 <ClientProvider />
 
-                <div className='flex-1 bg-[#343541]'>{children}</div>
+                <div className='bg-darkpurp-700 flex-1'>{children}</div>
               </div>
             </>
           )}

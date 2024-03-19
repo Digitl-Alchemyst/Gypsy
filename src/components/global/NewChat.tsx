@@ -5,11 +5,9 @@ import { PlusIcon } from '@heroicons/react/24/solid';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
-import { db } from '../../../firebase';
+import { db } from '#/firebase';
 
-// type Props = {
-//   id: string;
-// };
+
 
 function NewChat() {
   const router = useRouter();
@@ -19,7 +17,6 @@ function NewChat() {
     const doc = await addDoc(
       collection(db, 'users', session?.user?.email!, 'chats'),
       {
-        // messages: [],
         userId: session?.user?.email!,
         createdAt: serverTimestamp(),
       },

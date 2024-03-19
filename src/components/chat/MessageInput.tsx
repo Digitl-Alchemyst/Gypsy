@@ -1,14 +1,13 @@
+/* eslint-disable import/no-extraneous-dependencies */
 'use client';
 
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
-import React from 'react';
 import { useSession } from 'next-auth/react';
-import { useState } from 'react';
-import { addDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../firebase';
-import { collection } from 'firebase/firestore';
+import { useState, FormEvent } from 'react';
+import { addDoc, serverTimestamp, collection } from 'firebase/firestore';
+import { db } from '#/firebase';
 import toast from 'react-hot-toast';
-import { FormEvent } from 'react';
+
 
 type Props = {
   chatId: string;
@@ -77,20 +76,20 @@ function MessageInput({ chatId }: Props) {
   };
 
   return (
-    <div className='m-2 w-9/12 rounded-lg border border-slate-600 bg-slate-600/60 text-sm text-slate-300'>
+    <div className='m-2 w-9/12 rounded-lg border border-mattepurp-600 bg-mattepurp-600/60 text-sm text-mattepurp-300'>
       <form onSubmit={sendMessage} className='flex space-x-5 py-2 pl-5 pr-3'>
         <input
           type='text'
           value={prompt}
           disabled={!session}
           onChange={(e) => setPrompt(e.target.value)}
-          className='flex-1 bg-transparent focus:outline-none disabled:cursor-not-allowed disabled:text-slate-400'
+          className='flex-1 bg-transparent focus:outline-none disabled:cursor-not-allowed disabled:text-mattepurp-400 text-gypsygold-100'
           placeholder='Type your message here...'
         />
         <button
           type='submit'
           disabled={!prompt || !session}
-          className='rounded-lg border border-slate-600 bg-slate-800/60 px-3 py-2 font-bold text-sky-600 shadow-lg hover:opacity-50 disabled:cursor-not-allowed disabled:bg-slate-400 disabled:text-cyan-400'
+          className='rounded-lg border border-mattepurp-600 bg-gypsypurp-600 px-3 py-2 font-bold text-gypsypink-400 shadow-lg hover:opacity-50 disabled:cursor-not-allowed disabled:bg-gypsypurp-400 disabled:text-gypsypink-600'
         >
           <PaperAirplaneIcon className='h-7 w-7 -rotate-45' />
         </button>

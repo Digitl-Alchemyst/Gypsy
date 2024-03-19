@@ -1,10 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
 'use client';
 
 import React from 'react';
 import { useSession } from 'next-auth/react';
 import ChatMessage from './ChatMessage';
 import { collection, query, orderBy } from 'firebase/firestore';
-import { db } from '../firebase';
+import { db } from '#/firebase';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
 type Props = {

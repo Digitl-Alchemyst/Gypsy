@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ChatBubbleLeftIcon } from '@heroicons/react/24/outline';
@@ -11,7 +12,7 @@ import {
   deleteDoc,
   doc,
 } from 'firebase/firestore';
-import { db } from '../firebase';
+import { db } from '#/firebase';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import path from 'path';
 
@@ -20,14 +21,17 @@ type Props = {
 };
 
 function ChatRow({ id }: Props) {
+
   const pathname = usePathname();
   const router = useRouter();
+
   const { data: session } = useSession();
+
   const [activeChat, setActiveChat] = useState(false);
 
   const [messages] = useCollection(
     collection(db, 'users', session?.user?.email!, 'chats', id, 'messages'),
-  );
+    );
 
   useEffect(() => {
     if (!pathname) return;
@@ -43,17 +47,17 @@ function ChatRow({ id }: Props) {
   return (
     <Link
       href={`/chat/${id}`}
-      className={`chatRow justify-center 
-            ${activeChat && 'border border-slate-600/50 bg-slate-700 shadow-md'}
+      className={`chatRow my-2 justify-center 
+            ${activeChat && 'border border-mattepurp-600/50 bg-gypsypurp-700 hover:bg-darkpurp-600'}
             `}
     >
-      <ChatBubbleLeftIcon className='h-6 w-6 text-slate-300' />
-      <p className=' hidden flex-1 truncate text-slate-200 md:inline-flex'>
+      <ChatBubbleLeftIcon className='h-6 w-6 text-gypsypurp-300' />
+      <p className=' hidden flex-1 truncate text-gypsypurp-200 md:inline-flex'>
         {messages?.docs[messages?.docs.length - 1]?.data().text ||
           'Start a new chat'}
       </p>
       <TrashIcon
-        className='h-6 w-6 text-slate-300 hover:text-rose-700'
+        className='text-darkpink-400 h-5 w-5 hover:text-gypsypink-600'
         onClick={deleteChat}
       />
     </Link>
