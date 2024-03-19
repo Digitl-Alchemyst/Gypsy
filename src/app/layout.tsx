@@ -32,12 +32,12 @@ export default async function RootLayout({
          ) : (
            <>
              <Header />
-             <div className='flex flex-1'>
+             <div className='flex h-full w-full'>
                <div className='bg-gypsydark-700 w-1/6'>
                  <SideBar />
                </div>
-               <div className='flex-1 bg-darkpurp-700'>
-                 <div className='px-5'>{children}</div>
+               <div className='bg-darkpurp-700 h-full w-full'>
+                 <div className='px-5 h-full'>{children}</div>
                </div>
              </div>
            </>

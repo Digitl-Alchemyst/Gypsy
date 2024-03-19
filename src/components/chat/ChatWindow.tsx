@@ -31,7 +31,7 @@ const ChatWindow = ({ chatId }: Props) => {
   );
 
  return (
-   <div className='flex flex-1 overflow-y-auto'>
+   <div className='flex overflow-y-auto'>
      {messages?.docs.map((message) => (
        <ChatMessage key={message.id} message={message.data()} />
      ))}
