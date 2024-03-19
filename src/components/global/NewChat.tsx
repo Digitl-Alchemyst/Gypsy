@@ -5,11 +5,9 @@ import { PlusIcon } from '@heroicons/react/24/solid';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
-import { db } from '../../../firebase';
+import { db } from '#/firebase';
 
-// type Props = {
-//   id: string;
-// };
+
 
 function NewChat() {
   const router = useRouter();
@@ -19,7 +17,6 @@ function NewChat() {
     const doc = await addDoc(
       collection(db, 'users', session?.user?.email!, 'chats'),
       {
-        // messages: [],
         userId: session?.user?.email!,
         createdAt: serverTimestamp(),
       },
@@ -31,10 +28,10 @@ function NewChat() {
   return (
     <div
       onClick={createNewChat}
-      className='mt-4 chatRow bg-gypsydark-300  border-gypsydark-800 shadow-gypsydark-700 rounded-md border shadow-md'
+      className='hover:bg-darkpink-400/70 chatRow my-2 mt-4 rounded-lg  border border-gypsydark-800 bg-gypsypurp-300  shadow-md shadow-gypsydark-700'
     >
-      <PlusIcon className='text-gypsydark-800 h-5 w-5 items-center justify-center' />
-      <p className='text-gypsydark-700'>New Chat</p>
+      <PlusIcon className='h-5 w-5 items-center justify-center text-gypsydark-800' />
+      <p className='text-gypsydark-600'>New Chat</p>
     </div>
   );
 }

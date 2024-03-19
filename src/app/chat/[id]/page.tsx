@@ -1,6 +1,6 @@
-import ChatWindow from '@/components/chat/ChatWindow';
-import MessageInput from '@/components/chat/MessageInput';
-import React from 'react';
+import ChatWindow from '@/c/chat/ChatWindow';
+import MessageInput from '@/c/chat/MessageInput';
+
 
 type Props = {
   params: {
@@ -9,16 +9,20 @@ type Props = {
 };
 
 function ChatPage({ params: { id } }: Props) {
-  // console.log(props)
 
   return (
-    <div className='flex h-screen flex-col items-center overflow-hidden'>
-      {/* Chat History Window  */}
-      <ChatWindow chatId={id} />
-      {/* Message Input Box  */}
-      <MessageInput chatId={id} />
+    <div className='flex h-full w-full flex-col items-center justify-center pt-6 '>
+      {/* Chat History Window */}
+      <div className='flex h-full w-full flex-1 overflow-y-hidden pb-8 scrollbar-hide'>
+        <ChatWindow chatId={id} />
+      </div>
+      {/* Message Input Box */}
+      <div className='flex w-full items-center justify-center'>
+        <MessageInput chatId={id} />
+      </div>
     </div>
   );
 }
 
 export default ChatPage;
+

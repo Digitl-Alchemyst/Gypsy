@@ -1,14 +1,15 @@
+/* eslint-disable import/no-extraneous-dependencies */
 'use client';
 
-import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
-import React from 'react';
+import { useState, FormEvent } from 'react';
 import { useSession } from 'next-auth/react';
-import { useState } from 'react';
-import { addDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../firebase';
-import { collection } from 'firebase/firestore';
+import { addDoc, serverTimestamp, collection } from 'firebase/firestore';
+import { db } from '#/firebase';
 import toast from 'react-hot-toast';
-import { FormEvent } from 'react';
+import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
+import MessageSettings from './MessageSettings';
+import AudioRecorder from './AudioRecorder';
+
 
 type Props = {
   chatId: string;
@@ -52,51 +53,62 @@ function MessageInput({ chatId }: Props) {
       message,
     );
 
-    // Toast notification  for loading
-    const notification = toast.loading('Chat GPT is thinking...');
+    // // Toast notification  for loading
+    // const notification = toast.loading('GypsyGPT is thinking...');
 
-    await fetch('/api/askGypsy', {
-      // await fetch('/app/api/askGypsy', {
-      // await fetch(`/pages/api/askGypsy`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        prompt: input,
-        chatId,
-        model,
-        session,
-      }),
-    }).then(() => {
-      // Toast notification for success
-      toast.success('Chat GPT has responded!', {
-        id: notification,
-      });
-    });
+    // await fetch('/api/askGypsy', {
+    //   // await fetch('/app/api/askGypsy', {
+    //   // await fetch(`/pages/api/askGypsy`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     prompt: input,
+    //     chatId,
+    //     model,
+    //     session,
+    //   }),
+    // }).then(() => {
+    //   // Toast notification for success
+    //   toast.success('GypsyGPT has responded!', {
+    //     id: notification,
+    //   });
+    // });
   };
 
   return (
-    <div className='m-2 w-9/12 rounded-lg border border-slate-600 bg-slate-600/60 text-sm text-slate-300'>
-      <form onSubmit={sendMessage} className='flex space-x-5 py-2 pl-5 pr-3'>
+    <div className='m-2 flex w-10/12 flex-col items-center rounded-lg  border border-mattepurp-600 bg-mattepurp-600/60 text-mattepurp-300'>
+      <MessageSettings />
+      <div className='flex w-full pb-2 px-4 space-x-3'>
+      <form
+        onSubmit={sendMessage}
+        className='flex w-full items-end space-x-3 text-sm flex-1 '
+      >
         <input
           type='text'
           value={prompt}
+          tabIndex={0}
+          // rows={2}
           disabled={!session}
           onChange={(e) => setPrompt(e.target.value)}
-          className='flex-1 bg-transparent focus:outline-none disabled:cursor-not-allowed disabled:text-slate-400'
-          placeholder='Type your message here...'
+          className='max-h-[20dvh] flex-1 rounded-md border border-gypsypurp-400/60 bg-mattepurp-600/60 px-4  py-1 text-gypsygold-100 focus:outline-none disabled:cursor-not-allowed disabled:text-mattepurp-400'
+          placeholder='Please enter your prompt here...'
         />
         <button
           type='submit'
           disabled={!prompt || !session}
-          className='rounded-lg border border-slate-600 bg-slate-800/60 px-3 py-2 font-bold text-sky-600 shadow-lg hover:opacity-50 disabled:cursor-not-allowed disabled:bg-slate-400 disabled:text-cyan-400'
+          className='my-1 h-12 rounded-lg border border-mattepurp-600 bg-gypsypurp-600 px-3 py-2 font-bold text-gypsypink-400 shadow-lg hover:opacity-50 disabled:cursor-not-allowed disabled:bg-gypsypurp-400 disabled:text-gypsypink-600'
         >
           <PaperAirplaneIcon className='h-7 w-7 -rotate-45' />
         </button>
       </form>
 
-      <div>{/* Model Selection  */}</div>
+      {/* Audio Recorder  */}
+      <AudioRecorder />
+      </div>
+      {/* Model Selection  */}
+      <div></div>
     </div>
   );
 }

@@ -12,10 +12,10 @@ function Header() {
         <Image src='/Logo.png' alt='logo image' width={35} height={35} />
         <Image src='/Gypsy.png' alt='text image' width={45} height={35} />
         {/* Account  */}
-        <div className='pl-8'>
+        {/* <div className='pl-8'>
 
         <AccountButton />
-        </div>
+        </div> */}
       </div>
       {/* Prompt Engineer  */}
       <PromptEngineer />

@@ -4,6 +4,7 @@ import React from 'react'
 import { useSession, signOut } from 'next-auth/react';
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
+import { LogOutIcon } from 'lucide-react';
 
 function AccountButton() {
     
@@ -12,11 +13,8 @@ function AccountButton() {
   return (
     <div>
       {session && (
-        <div
-          className='flex items-center justify-between gap-5 rounded-md hover:cursor-pointer hover:border hover:border-mattepurp-600/50 hover:bg-mattepurp-700 hover:shadow-md py-1 px-3'
-          onClick={() => signOut()}
-        >
-          <div className='flex items-center space-x-3'>
+        <div className='flex w-full items-center gap-5 rounded-md px-3 py-1 hover:border hover:border-mattepurp-600/50 hover:bg-mattepurp-700 hover:shadow-md'>
+          <div className='flex items-center justify-between space-x-3 w-full'>
             <Image
               src={session.user?.image!}
               alt='user'
@@ -25,12 +23,14 @@ function AccountButton() {
               quality={100}
               className=' cursor-pointer rounded-full hover:opacity-50'
             />
-            <span className='justify-self-start text-lg font-semibold text-gypsygold-300'>
+            <span className='justify-self-start text-lg font-light text-gypsypurp-300'>
               {session.user?.name!}
             </span>
-          <EllipsisHorizontalIcon className='h-8 w-8 justify-self-end text-gypsygold-400' />
+            <LogOutIcon
+              onClick={() => signOut()}
+              className='h-6 w-6 justify-self-end text-gypsygold-400 hover:cursor-pointer'
+            />
           </div>
-
         </div>
       )}
     </div>

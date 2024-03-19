@@ -25,25 +25,24 @@ export default async function RootLayout({
 
   return (
     <html lang='en'>
-      {/* <body className={inter.className}> */}
-      <body>
+      <body className='flex h-screen flex-col'>
         <SessionProvider session={session}>
           {!session ? (
             <Login />
           ) : (
-            <>
+            <div className='flex flex-col h-screen'>
               <Header />
-              <div className='flex'>
-                <div className='bg-gypsydark-700 h-screen max-w-xs overflow-y-auto md:min-w-[20rem] lg:min-w-[22rem]'>
+              <div className='flex w-full overflow-y-hidden scrollbar-hide h-full'>
+                {/* Sidebar  */}
+                <div className='w-1/6 bg-gypsydark-700'>
                   <SideBar />
                 </div>
-
-                {/* Client Working Notification */}
-                <ClientProvider />
-
-                <div className='flex-1 bg-[#343541]'>{children}</div>
+                {/* Main App Window  */}
+                <div className='h-full w-full overflow-y-hidden bg-darkpurp-700 px-5'>
+                  {children}
+                </div>
               </div>
-            </>
+            </div>
           )}
         </SessionProvider>
       </body>
