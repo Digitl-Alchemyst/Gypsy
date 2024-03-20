@@ -2,11 +2,11 @@ import openai from './chatGpt';
 
 // Chat ID is unused, but could be used to train the model to a specific user by reviewing the chat history by making a call to get all the messages of the chatId.
 const query = async (prompt: string, chatId: string, model: string) => {
-  const res = await openai
-    .createCompletion({
+  const res = await openai.chat.completions
+    .create({
+      messages: prompt,
       model: model,
       // engine: model,
-      prompt: prompt,
       max_tokens: 550,
       temperature: 0.9, // Creativity factor 1 creative 0 logical
       top_p: 1,
@@ -20,7 +20,7 @@ const query = async (prompt: string, chatId: string, model: string) => {
       // echo: false,
       // user: chatId,
     })
-    .then((res) => res.data.choices[0].text)
+    .then((res) => completion.choices[0])
     .catch((err) => `GypsyGPT cant answer right now! (Error: ${err.message})`);
 
   return res;

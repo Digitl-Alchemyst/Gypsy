@@ -82,6 +82,38 @@ function MessageSettings() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
+      {/* Frequency  */}
+      <div>
+        <DropdownMenu>
+          <DropdownMenuTrigger>Frequency</DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>Frequency</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>0</DropdownMenuItem>
+            <DropdownMenuItem>0.3</DropdownMenuItem>
+            <DropdownMenuItem>0.5</DropdownMenuItem>
+            <DropdownMenuItem>0.7</DropdownMenuItem>
+            <DropdownMenuItem>0.9</DropdownMenuItem>
+            <DropdownMenuItem>1</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+      {/* Presence  */}
+      <div>
+        <DropdownMenu>
+          <DropdownMenuTrigger>Presence</DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>Presence</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>0</DropdownMenuItem>
+            <DropdownMenuItem>0.3</DropdownMenuItem>
+            <DropdownMenuItem>0.5</DropdownMenuItem>
+            <DropdownMenuItem>0.7</DropdownMenuItem>
+            <DropdownMenuItem>0.9</DropdownMenuItem>
+            <DropdownMenuItem>1</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
       {/* Max Tokens  */}
       <div>
         <DropdownMenu>
@@ -92,6 +124,19 @@ function MessageSettings() {
             <DropdownMenuItem>500</DropdownMenuItem>
             <DropdownMenuItem>1000</DropdownMenuItem>
             <DropdownMenuItem>2000</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+      {/* Models  */}
+      <div>
+        <DropdownMenu>
+          <DropdownMenuTrigger>Models</DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>Models</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>3.5</DropdownMenuItem>
+            <DropdownMenuItem>3.5 Turbo</DropdownMenuItem>
+            <DropdownMenuItem>4</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

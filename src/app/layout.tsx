@@ -30,15 +30,15 @@ export default async function RootLayout({
           {!session ? (
             <Login />
           ) : (
-            <div className='flex flex-col h-screen'>
+            <div className='flex h-screen flex-col'>
               <Header />
-              <div className='flex w-full overflow-y-hidden scrollbar-hide h-full'>
+              <div className='flex h-full w-full overflow-y-hidden scrollbar-hide'>
                 {/* Sidebar  */}
                 <div className='w-1/6 bg-gypsydark-700'>
                   <SideBar />
                 </div>
                 {/* Main App Window  */}
-                <div className='h-full w-full overflow-y-hidden bg-darkpurp-700 px-5'>
+                <div className='from-darkpurp-600 to-gypsydark-700 h-full w-full overflow-y-hidden bg-gradient-to-b px-5'>
                   {children}
                 </div>
               </div>
