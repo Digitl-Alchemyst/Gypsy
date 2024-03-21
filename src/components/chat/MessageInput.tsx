@@ -8,7 +8,7 @@ import { db } from '#/firebase';
 import toast from 'react-hot-toast';
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
 import MessageSettings from './MessageSettings';
-import AudioRecorder from './AudioRecorder';
+import AudioRecorder, { mimeType } from './AudioRecorder';
 
 type Props = {
   chatId: string;
@@ -20,8 +20,8 @@ function MessageInput({ chatId }: Props) {
   const submitAudioRef = useRef<HTMLButtonElement | null>(null);
 
   const uploadAudio = (blob: Blob) => {
-    const url = URL.createObjectURL(blob);
-    const audioFile = new File([blob], 'audio.webm', { type: blob.type });
+    
+    const audioFile = new File([blob], 'audio.webm', { type: mimeType });
 
     // Set the blob file as the value of the file input field 
     if (fileRef.current) {
@@ -105,6 +105,7 @@ function MessageInput({ chatId }: Props) {
       <div className='flex w-full space-x-3 px-4 pb-2'>
         <form
           onSubmit={sendMessage}
+          action={formAction}
           className='flex w-full flex-1 items-center space-x-3 text-sm '
         >
           <input
