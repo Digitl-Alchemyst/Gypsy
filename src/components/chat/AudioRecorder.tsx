@@ -1,14 +1,61 @@
-import { MicrophoneIcon } from '@heroicons/react/24/outline';
-import React from 'react'
+'use client';
 
-function AudioRecorder() {
+import { MicrophoneIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+
+function AudioRecorder({ uploadAudio }: { uploadAudio: (blob: Blob) => void }) {
+  const [permission, setPermission] = useState(false);
+  const [stream, setStream] = useState<MediaStream | null>(null);
+
+  useEffect(() => {
+    getMicrophonePermission();
+  }, []);
+
+  const getMicrophonePermission = async () => {
+    if ('MediaRecorder' in window) {
+      try {
+        const streamData = await navigator.mediaDevices.getUserMedia({
+          audio: true,
+          video: false,
+        });
+        setPermission(true);
+        setStream(streamData);
+      } catch (err: any) {
+        alert(err.message);
+      }
+    } else {
+      alert('The Media Recorder API is not supported by your browser.');
+    }
+  };
+
+  
   return (
-    <button
-      className='my-1 h-12 rounded-lg border border-mattepurp-600 bg-gypsypurp-600 px-3 py-2 font-bold text-gypsypink-400 shadow-lg hover:opacity-50 disabled:cursor-not-allowed disabled:bg-gypsypurp-400 disabled:text-gypsypink-600'
-    >
-      <MicrophoneIcon className='h-7 w-7' />
-    </button>
+    <div className='flex items-center justify-center'>
+      {!permission && (
+        <button onClick={getMicrophonePermission}>Activate Microphone</button>
+      )}
+      {permission && (
+        <>
+          <Image
+            src='/Microphone.png'
+            width={45}
+            height={45}
+            alt='microphone'
+            className='rounded-full'
+          />
+          <Image
+            src='/Active.gif'
+            width={45}
+            height={45}
+            alt='microphone'
+            className='rounded-full'
+          />
+        </>
+      )}
+    </div>
   );
 }
 
-export default AudioRecorder
+export default AudioRecorder;
+
