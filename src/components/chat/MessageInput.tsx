@@ -105,7 +105,7 @@ function MessageInput({ chatId }: Props) {
       <div className='flex w-full space-x-3 px-4 pb-2'>
         <form
           onSubmit={sendMessage}
-          action={formAction}
+          // action={formAction}
           className='flex w-full flex-1 items-center space-x-3 text-sm '
         >
           <input
